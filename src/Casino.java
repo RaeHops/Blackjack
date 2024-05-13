@@ -4,6 +4,7 @@ public class Casino {
 
     public Card [] deck;
     public Boolean isHit = false; //help us keep track of hit or stay
+    public Player p;
 
     public static void main(String[] args) {
         Casino c = new Casino();
@@ -19,7 +20,7 @@ public class Casino {
         // then distribute cards
         printDeck();
 
-        Player p = new Player();
+        p = new Player();
         p.print();
 
         Scanner scan = new Scanner(System.in);
@@ -68,9 +69,8 @@ public class Casino {
         }
     public void deal(){
         //first and second card to player
-        p.hand deck[0];
-
-
+        p.hand[0] = deck[0];
+        p.hand[1] = deck [1];
 
     }
 
