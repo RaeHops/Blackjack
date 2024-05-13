@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ef02f574-cef0-42d7-8619-4cc40f372e35" name="Changes" comment="Blackjack game start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Casino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casino.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
