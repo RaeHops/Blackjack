@@ -1,6 +1,9 @@
+import java.util.Scanner;
+
 public class Casino {
 
     public Card [] deck;
+    public Boolean isHit = false; //help us keep track of hit or stay
 
     public static void main(String[] args) {
         Casino c = new Casino();
@@ -15,6 +18,17 @@ public class Casino {
         shuffle();
         // then distribute cards
         printDeck();
+
+        Player p = new Player();
+        p.print();
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("What is your name?");
+        String Username = scan.nextLine();
+        System.out.println(Username);
+        p.name = Username;
+        p.print();
+
     }
 
     public void makeDeck(){
@@ -47,10 +61,17 @@ public class Casino {
         }
     }
 
-    public void printDeck(){
+        public void printDeck(){
         for (int i = 0; i<deck.length; i++){
             deck[i].print();
+            }
         }
+    public void deal(){
+        //first and second card to player
+        p.hand deck[0];
+
+
+
     }
 
     }
