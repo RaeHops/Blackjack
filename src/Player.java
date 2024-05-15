@@ -5,6 +5,7 @@ public class Player {
 
     public String name;
     public Boolean isPlayer;
+    public  int numCards;
 
 
     //current value of cards
@@ -19,19 +20,32 @@ public class Player {
         name = "Player";
         isPlayer = true;
         hand = new Card[2];
+        numCards = 0;
 
     }
 
     public void print(){
 
-        //TODO: Print my hand
+
+
+
         if(isPlayer) {
             System.out.println("Hi " + name + "!");
             System.out.println("You have " + cardsValue + " points");
         }
         else{
-            System.out.println("Dealer info");
+            System.out.println("Dealer info:");
+        }
+        //TODO: Print my hand
+        for(int i = 0; i < hand.length; i++){
+            hand[i].print();
+
         }
     }
+    public void addCard( Card c){
+        hand[numCards] = c;
+        numCards = numCards + 1;
+        cardsValue = cardsValue + c.value;
 
+    }
 }
