@@ -22,16 +22,20 @@ public class Casino {
         printDeck();
 
         System.out.println("");
+        System.out.println("");
+
 
         p = new Player();
         dealer = new Player();
         deal();
 
         System.out.println("it is " + p.isPlayer + " that the player is a player.");
+        System.out.println("it is " + dealer.isPlayer + " that the dealer is a player.");
+        System.out.println("");
 
         dealer.isPlayer = false;
         dealer.print();
-        System.out.println("it is " + dealer.isPlayer + " that the dealer is a player.");
+
 
 
         Scanner scan = new Scanner(System.in);
@@ -85,8 +89,8 @@ public class Casino {
         p.addCard(deck[0]);
         p.addCard(deck[1]);
 
-        dealer.hand[0] = deck[2];
-        dealer.hand[1] = deck[3];
+        dealer.addCard(deck[2]);
+        dealer.addCard(deck[3]);
 
     }
 

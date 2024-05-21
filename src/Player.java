@@ -32,15 +32,19 @@ public class Player {
         if(isPlayer) {
             System.out.println("Hi " + name + "!");
             System.out.println("You have " + cardsValue + " points");
+
+            //TODO: Print my hand
+            for(int i = 0; i < hand.length; i++){
+                hand[i].print();
+            }
+
         }
         else{
             System.out.println("Dealer info:");
+            System.out.println("the dealer has " + hand[0].value + " points.");
+            hand[0].print();
         }
-        //TODO: Print my hand
-        for(int i = 0; i < hand.length; i++){
-            hand[i].print();
 
-        }
     }
     public void addCard( Card c){
         hand[numCards] = c;
