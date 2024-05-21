@@ -47,9 +47,14 @@ public class Player {
 
     }
     public void addCard( Card c){
+        if(numCards>=2){
+            //TODO: make an array that is 1 larger than the hand array
+            //TODO: copy over all the values in hand array to the new array.
+        }
         hand[numCards] = c;
         numCards = numCards + 1;
         cardsValue = cardsValue + c.value;
+
 
     }
 }

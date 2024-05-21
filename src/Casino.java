@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Casino {
 
     public Card [] deck;
+    public int numCardsDealt;
     public Boolean isHit = false; //help us keep track of hit or stay
     public Player p;
     public Player dealer;
@@ -44,6 +45,29 @@ public class Casino {
         System.out.println(Username);
         p.name = Username;
         p.print();
+
+        System.out.println();
+        System.out.println("Do you want to hit or stand?");
+        String descision = scan.nextLine();
+        if(descision.equals("hit")){
+            isHit = true;
+            System.out.println("you decided to hit");
+        }else{
+            isHit = false;
+            System.out.println("you decided to stand");
+        }
+
+        if(isHit){
+            //take a card from the deck
+            //add it to hand and update value(points)
+            p.addCard(deck[numCardsDealt]);
+            numCardsDealt++;
+            p.print();
+        }else{
+            //dealer has to play
+            //dealer hits until 17 or greater
+            //use add card to do this
+        }
 
     }
 
@@ -91,8 +115,10 @@ public class Casino {
 
         dealer.addCard(deck[2]);
         dealer.addCard(deck[3]);
-
+        numCardsDealt = 4;
     }
+
+
 
     }
 
