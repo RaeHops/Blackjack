@@ -46,27 +46,33 @@ public class Casino {
         p.name = Username;
         p.print();
 
-        System.out.println();
-        System.out.println("Do you want to hit or stand?");
-        String descision = scan.nextLine();
-        if(descision.equals("hit")){
-            isHit = true;
-            System.out.println("you decided to hit");
-        }else{
-            isHit = false;
-            System.out.println("you decided to stand");
-        }
+        String descision = "";
+        // stop when the user stands or when the user busts
+        while(!descision.equals("stand") && p.cardsValue <= 21) {
 
-        if(isHit){
-            //take a card from the deck
-            //add it to hand and update value(points)
-            p.addCard(deck[numCardsDealt]);
-            numCardsDealt++;
-            p.print();
-        }else{
-            //dealer has to play
-            //dealer hits until 17 or greater
-            //use add card to do this
+            System.out.println();
+            System.out.println("Do you want to hit or stand?");
+            descision = scan.nextLine();
+            if (descision.equals("hit")) {
+                isHit = true;
+                System.out.println("you decided to hit");
+            } else {
+                isHit = false;
+                System.out.println("you decided to stand");
+            }
+
+            if (isHit) {
+                //take a card from the deck
+                //add it to hand and update value(points)
+                p.addCard(deck[numCardsDealt]);
+                numCardsDealt++;
+                p.print();
+
+            } else {
+                //dealer has to play
+                //dealer hits until 17 or greater
+                //use add card to do this
+            }
         }
 
     }
