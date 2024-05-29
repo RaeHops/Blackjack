@@ -6,6 +6,7 @@ public class Player {
     public String name;
     public Boolean isPlayer;
     public  int numCards;
+    public boolean dealerTurn;
 
 
     //current value of cards
@@ -31,18 +32,30 @@ public class Player {
 
         if(isPlayer) {
             System.out.println("Hi " + name + "!");
-            System.out.println("You have " + cardsValue + " points");
+            System.out.println("You have " + cardsValue + " points.");
 
             //TODO: Print my hand
             for(int i = 0; i < hand.length; i++){
                 hand[i].print();
             }
+            if (cardsValue>21){
+                System.out.println("Bust!");
+                isPlayer = false;
+            }
 
         }
         else{
-            System.out.println("Dealer info:");
-            System.out.println("the dealer has " + hand[0].value + " points.");
-            hand[0].print();
+
+                System.out.println("Dealer info:");
+                System.out.println("the dealer has " + hand[0].value + " points.");
+                hand[0].print();
+
+
+        }
+
+        if(dealerTurn = true){
+            System.out.println("the dealer has " + cardsValue + " points.");
+
         }
 
     }
@@ -63,4 +76,11 @@ public class Player {
 
 
     }
+
+//    public void dealerTurn(){
+//        if(isPlayer = false){
+//            hand = new Card[4];
+//            System.out.println("the dealer has " + hand[3+4].value+ " points.");
+//        }
+//    }
 }

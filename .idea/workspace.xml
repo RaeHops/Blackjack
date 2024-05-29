@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef02f574-cef0-42d7-8619-4cc40f372e35" name="Changes" comment="made it so that u could add cards and copy the values in hand into the new array">
+    <list default="true" id="ef02f574-cef0-42d7-8619-4cc40f372e35" name="Changes" comment="made it so i can hit multiple times">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Casino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casino.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
@@ -144,7 +144,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716467474556</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="made it so i can hit multiple times">
+      <option name="closed" value="true" />
+      <created>1716470287051</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1716470287051</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -156,6 +164,7 @@
     <MESSAGE value="Dealer hand" />
     <MESSAGE value="hit" />
     <MESSAGE value="made it so that u could add cards and copy the values in hand into the new array" />
-    <option name="LAST_COMMIT_MESSAGE" value="made it so that u could add cards and copy the values in hand into the new array" />
+    <MESSAGE value="made it so i can hit multiple times" />
+    <option name="LAST_COMMIT_MESSAGE" value="made it so i can hit multiple times" />
   </component>
 </project>

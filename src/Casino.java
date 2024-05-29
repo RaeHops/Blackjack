@@ -7,6 +7,7 @@ public class Casino {
     public Boolean isHit = false; //help us keep track of hit or stay
     public Player p;
     public Player dealer;
+    public Boolean isTurn = true;
 
     public static void main(String[] args) {
         Casino c = new Casino();
@@ -45,6 +46,7 @@ public class Casino {
         System.out.println(Username);
         p.name = Username;
         p.print();
+        isTurn = true;
 
         String descision = "";
         // stop when the user stands or when the user busts
@@ -59,6 +61,7 @@ public class Casino {
             } else {
                 isHit = false;
                 System.out.println("you decided to stand");
+                isTurn = false;
             }
 
             if (isHit) {
@@ -69,6 +72,15 @@ public class Casino {
                 p.print();
 
             } else {
+                isTurn = false;
+                System.out.println("");
+                System.out.println("Dealer's Turn");
+                deck[2].print();
+                deck[3].print();
+                dealer.cardsValue = deck.length;
+                dealer.dealerTurn=true;
+
+
                 //dealer has to play
                 //dealer hits until 17 or greater
                 //use add card to do this
