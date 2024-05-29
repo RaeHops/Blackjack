@@ -53,7 +53,7 @@ public class Player {
 
         }
 
-        if(dealerTurn = true){
+        if(dealerTurn == true){
             System.out.println("the dealer has " + cardsValue + " points.");
 
         }

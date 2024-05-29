@@ -75,10 +75,28 @@ public class Casino {
                 isTurn = false;
                 System.out.println("");
                 System.out.println("Dealer's Turn");
-                deck[2].print();
-                deck[3].print();
-                dealer.cardsValue = deck.length;
+                for(int i = 0; i < dealer.hand.length; i++){
+                    dealer.hand[i].print();
+                    if (dealer.cardsValue < 17) {
+                        dealer.addCard(deck[numCardsDealt]);
+                        numCardsDealt++;
+
+                    }
+                }
+                System.out.println("The dealer has " + dealer.cardsValue + " points.");
+                if(dealer.cardsValue > 21){
+                    System.out.println("Dealer Bust! " +p.name+ "wins!");
+                }
+                if (p.cardsValue > dealer.cardsValue && p.cardsValue <= 21){
+
+                }
+
+//
+//                deck[2].print();
+//                deck[3].print();
+               // dealer.cardsValue = deck.length;
                 dealer.dealerTurn=true;
+
 
 
                 //dealer has to play
