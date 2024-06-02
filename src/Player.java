@@ -59,6 +59,11 @@ public class Player {
         }
 
     }
+    public void reset() {
+        hand = new Card[5];
+        cardsValue = 0;
+        numCards = 0;
+    }
     public void addCard( Card c){
         if(numCards>=2){
             //TODO: make an array that is 1 larger than the hand array

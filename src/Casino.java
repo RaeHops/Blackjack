@@ -8,17 +8,18 @@ public class Casino {
     public Player p;
     public Player dealer;
     public Boolean isTurn = true;
+    public Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
         Casino c = new Casino();
 
     }
 
-    public Casino(){
+    public Casino() {
         System.out.println("Welcome to Gigi's Casino!");
         makeDeck();
 
-       //shuffle first
+        //shuffle first
         shuffle();
         // then distribute cards
         printDeck();
@@ -39,72 +40,97 @@ public class Casino {
         dealer.print();
 
 
-
         Scanner scan = new Scanner(System.in);
         System.out.println("What is your name?");
         String Username = scan.nextLine();
         System.out.println(Username);
         p.name = Username;
-        p.print();
-        isTurn = true;
 
-        String descision = "";
-        // stop when the user stands or when the user busts
-        while(!descision.equals("stand") && p.cardsValue <= 21) {
+        while (numCardsDealt < deck.length) {
+            playRound();
 
-            System.out.println();
-            System.out.println("Do you want to hit or stand?");
-            descision = scan.nextLine();
-            if (descision.equals("hit")) {
-                isHit = true;
-                System.out.println("you decided to hit");
-            } else {
-                isHit = false;
-                System.out.println("you decided to stand");
-                isTurn = false;
-            }
+            System.out.println("The deck is exhausted. Thank you for playing!");
+        }
+    }
 
-            if (isHit) {
-                //take a card from the deck
-                //add it to hand and update value(points)
-                p.addCard(deck[numCardsDealt]);
-                numCardsDealt++;
-                p.print();
 
-            } else {
-                isTurn = false;
-                System.out.println("");
-                System.out.println("Dealer's Turn");
-                for(int i = 0; i < dealer.hand.length; i++){
-                    dealer.hand[i].print();
-                    if (dealer.cardsValue < 17) {
-                        dealer.addCard(deck[numCardsDealt]);
-                        numCardsDealt++;
+        public void playRound() {
 
+            p.print();
+            isTurn = true;
+
+            String descision = "";
+            // stop when the user stands or when the user busts
+            while (!descision.equals("stand") && p.cardsValue <= 21) {
+
+                System.out.println();
+                System.out.println("Do you want to hit or stand?");
+                descision = scan.nextLine();
+                if (descision.equals("hit")) {
+                    isHit = true;
+                    System.out.println("you decided to hit");
+                } else {
+                    isHit = false;
+                    System.out.println("you decided to stand");
+                    isTurn = false;
+                }
+
+                if (isHit) {
+                    //take a card from the deck
+                    //add it to hand and update value(points)
+                    p.addCard(deck[numCardsDealt]);
+                    numCardsDealt++;
+                    p.print();
+
+                } else {
+                    isTurn = false;
+                    System.out.println("");
+                    System.out.println("Dealer's Turn");
+                    for (int i = 0; i < dealer.hand.length; i++) {
+                        dealer.hand[i].print();
+                        if (dealer.cardsValue < 17) {
+                            dealer.addCard(deck[numCardsDealt]);
+                            numCardsDealt++;
+
+                        }
                     }
-                }
-                System.out.println("The dealer has " + dealer.cardsValue + " points.");
-                if(dealer.cardsValue > 21){
-                    System.out.println("Dealer Bust! " +p.name+ "wins!");
-                }
-                if (p.cardsValue > dealer.cardsValue && p.cardsValue <= 21){
+                    System.out.println("The dealer has " + dealer.cardsValue + " points.");
+                    if (dealer.cardsValue > 21 && p.cardsValue < 21) {
+                        System.out.println("Dealer Bust! " + p.name + " wins!");
+                    } else if (p.cardsValue > 21 && dealer.cardsValue < 21) {
+                        System.out.println("Player Bust! Dealer wins!");
+                    } else if (p.cardsValue > 21 && dealer.cardsValue > 21) {
+                        System.out.println("Tie! Both busted");
+                    }
 
-                }
+                    if (p.cardsValue > dealer.cardsValue && p.cardsValue <= 21) {
+                        System.out.println("You have a higher value, " + p.name + " wins!");
 
-//
+                    } else if (p.cardsValue < dealer.cardsValue && dealer.cardsValue <= 21) {
+                        System.out.println("You have a lower value, dealer wins!");
+                    }
+
+                    resetHands();
+
 //                deck[2].print();
 //                deck[3].print();
-               // dealer.cardsValue = deck.length;
-                dealer.dealerTurn=true;
+                    // dealer.cardsValue = deck.length;
+                    dealer.dealerTurn = true;
 
 
+                    //dealer has to play
+                    //dealer hits until 17 or greater
+                    //use add card to do this
+                }
 
-                //dealer has to play
-                //dealer hits until 17 or greater
-                //use add card to do this
             }
         }
 
+
+
+    public void resetHands () {
+        p.reset();
+        dealer.reset();
     }
 
     public void makeDeck(){
