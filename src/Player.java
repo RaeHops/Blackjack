@@ -60,7 +60,7 @@ public class Player {
 
     }
     public void reset() {
-        hand = new Card[5];
+        hand = new Card[2];
         cardsValue = 0;
         numCards = 0;
     }

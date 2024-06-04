@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef02f574-cef0-42d7-8619-4cc40f372e35" name="Changes" comment="Dealer other card">
+    <list default="true" id="ef02f574-cef0-42d7-8619-4cc40f372e35" name="Changes" comment="Added while loop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Casino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Casino.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
@@ -160,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716985103344</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added while loop">
+      <option name="closed" value="true" />
+      <created>1717353874362</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717353874362</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -174,6 +182,7 @@
     <MESSAGE value="made it so that u could add cards and copy the values in hand into the new array" />
     <MESSAGE value="made it so i can hit multiple times" />
     <MESSAGE value="Dealer other card" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dealer other card" />
+    <MESSAGE value="Added while loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added while loop" />
   </component>
 </project>

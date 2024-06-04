@@ -3,12 +3,13 @@ import java.util.Scanner;
 public class Casino {
 
     public Card [] deck;
-    public int numCardsDealt;
+    public int numCardsDealt = 0;
     public Boolean isHit = false; //help us keep track of hit or stay
     public Player p;
     public Player dealer;
     public Boolean isTurn = true;
     public Scanner scan = new Scanner(System.in);
+    public Boolean AnotherRound = true;
 
     public static void main(String[] args) {
         Casino c = new Casino();
@@ -30,14 +31,14 @@ public class Casino {
 
         p = new Player();
         dealer = new Player();
-        deal();
+     //   deal();
 
         System.out.println("it is " + p.isPlayer + " that the player is a player.");
         System.out.println("it is " + dealer.isPlayer + " that the dealer is a player.");
         System.out.println("");
 
         dealer.isPlayer = false;
-        dealer.print();
+      //  dealer.print();
 
 
         Scanner scan = new Scanner(System.in);
@@ -46,17 +47,22 @@ public class Casino {
         System.out.println(Username);
         p.name = Username;
 
-        while (numCardsDealt < deck.length) {
+        while (numCardsDealt < deck.length && AnotherRound) {
+
+            deal();
+            p.print();
             playRound();
 
-            System.out.println("The deck is exhausted. Thank you for playing!");
         }
+
+        System.out.println("The deck is exhausted. Thank you for playing!");
     }
 
 
         public void playRound() {
 
-            p.print();
+        dealer.print();
+        p.print();
             isTurn = true;
 
             String descision = "";
@@ -94,6 +100,7 @@ public class Casino {
 
                         }
                     }
+
                     System.out.println("The dealer has " + dealer.cardsValue + " points.");
                     if (dealer.cardsValue > 21 && p.cardsValue < 21) {
                         System.out.println("Dealer Bust! " + p.name + " wins!");
@@ -110,19 +117,20 @@ public class Casino {
                         System.out.println("You have a lower value, dealer wins!");
                     }
 
-                    resetHands();
 
-//                deck[2].print();
-//                deck[3].print();
-                    // dealer.cardsValue = deck.length;
-                    dealer.dealerTurn = true;
-
-
-                    //dealer has to play
-                    //dealer hits until 17 or greater
-                    //use add card to do this
                 }
 
+                Scanner scan = new Scanner(System.in);
+                System.out.println("Do you want to play again?");
+                String PlayAgain;
+                PlayAgain = scan.nextLine();
+                if (PlayAgain.equals("Yes")) {
+                    resetHands();
+                    AnotherRound = true;
+                } else {
+                    System.out.println("Good Game! I hope you had a great time at Gigi's Casino! See you next time!");
+                    AnotherRound = false;
+                }
             }
         }
 
@@ -172,12 +180,18 @@ public class Casino {
         //first and second card to player
 //        p.hand[0] = deck[0];
 //        p.hand[1] = deck [1];
-        p.addCard(deck[0]);
-        p.addCard(deck[1]);
+        p.addCard(deck[numCardsDealt]);
+        numCardsDealt++;
+        p.addCard(deck[numCardsDealt]);
+        numCardsDealt++;
 
-        dealer.addCard(deck[2]);
-        dealer.addCard(deck[3]);
-        numCardsDealt = 4;
+        dealer.addCard(deck[numCardsDealt]);
+        numCardsDealt++;
+        dealer.addCard(deck[numCardsDealt]);
+        numCardsDealt++;
+        dealer.print();
+        p.print();
+       // numCardsDealt = 4;
     }
 
 
