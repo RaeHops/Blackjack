@@ -50,7 +50,6 @@ public class Casino {
         while (numCardsDealt < deck.length && AnotherRound) {
 
             deal();
-            p.print();
             playRound();
 
         }
@@ -61,7 +60,12 @@ public class Casino {
 
         public void playRound() {
 
+        System.out.println("");
+
+
         dealer.print();
+            isTurn = true;
+            dealer.dealerTurn = false;
         p.print();
             isTurn = true;
 
@@ -120,17 +124,17 @@ public class Casino {
 
                 }
 
-                Scanner scan = new Scanner(System.in);
-                System.out.println("Do you want to play again?");
-                String PlayAgain;
-                PlayAgain = scan.nextLine();
-                if (PlayAgain.equals("Yes")) {
-                    resetHands();
-                    AnotherRound = true;
-                } else {
-                    System.out.println("Good Game! I hope you had a great time at Gigi's Casino! See you next time!");
-                    AnotherRound = false;
-                }
+            }
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Do you want to play again?");
+            String PlayAgain;
+            PlayAgain = scan.nextLine();
+            if (PlayAgain.equals("yes")) {
+                resetHands();
+                AnotherRound = true;
+            } else {
+                System.out.println("Good Game! I hope you had a great time at Gigi's Casino! See you next time!");
+                AnotherRound = false;
             }
         }
 
@@ -189,8 +193,8 @@ public class Casino {
         numCardsDealt++;
         dealer.addCard(deck[numCardsDealt]);
         numCardsDealt++;
-        dealer.print();
-        p.print();
+//        dealer.print();
+//        p.print();
        // numCardsDealt = 4;
     }
 
